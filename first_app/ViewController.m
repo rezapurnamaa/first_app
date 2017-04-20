@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIView *cloud;
 
 @end
 
@@ -16,14 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //define color for the cloud
+    self.cloud.backgroundColor = [UIColor grayColor];
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)moveCloud:(UISlider *)sender {
+//    int screenHeight = self.
+    CGPoint centerPoint = self.cloud.center;
+    centerPoint.x = sender.value;
+    self.cloud.center = centerPoint;
 }
-
 
 @end
